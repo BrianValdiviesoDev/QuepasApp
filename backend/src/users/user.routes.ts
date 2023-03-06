@@ -2,6 +2,11 @@
  * This file join request url with a function in controller
  */
 
-import { Router } from "express";
+import { Router, Request, Response } from "express";
+import * as UserController from "./user.controllers";
 
-const router = Router();
+const userRouter = Router();
+
+userRouter.get("/users", UserController.getUser);
+
+export { userRouter };
