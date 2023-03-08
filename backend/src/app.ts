@@ -4,6 +4,7 @@ import cors from "cors";
 
 //import routes
 import { userRouter } from "./users/user.routes";
+import { authRouter } from "./auth/auth.routes";
 import dbConnect from "./config/mongo";
 
 const port = process.env.API_PORT;
@@ -14,6 +15,7 @@ conectDB();
 app.use(cors());
 
 app.use(userRouter);
+app.use(authRouter);
 
 app.listen(port, () => {
   console.log("QuepasApp - API");
